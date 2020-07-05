@@ -137,7 +137,7 @@ class SensorThermalComfort(Entity):
         VP = pow(10, SUM - 3) * humidity
         Td = math.log(VP / 0.61078)
         Td = (241.88 * Td) / (17.558 - Td)
-        return round(Td, 2)
+        return round(Td, 1)
 
     def toFahrenheit(self, celsius):
         """celsius to fahrenheit"""
@@ -167,7 +167,7 @@ class SensorThermalComfort(Entity):
         elif humidity > 85 and fahrenheit >= 80 and fahrenheit <= 87:
             hi = hi + ((humidity - 85) * 0.1) * ((87 - fahrenheit) * 0.2)
 
-        return round(self.toCelsius(hi), 2)
+        return round(self.toCelsius(hi), 1)
 
     def computePerception(self, temperature, humidity):
         """https://en.wikipedia.org/wiki/Dew_point"""
