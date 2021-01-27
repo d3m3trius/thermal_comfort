@@ -196,7 +196,7 @@ class SensorThermalComfort(Entity):
         absHumidity *= humidity;
         absHumidity *= 2.1674;
         absHumidity /= absTemperature;
-        return round(absHumidity, 2)
+        return round(absHumidity, 1)
 
     """Sensor Properties"""
     @property
